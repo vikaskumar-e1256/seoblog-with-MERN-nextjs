@@ -1,7 +1,7 @@
 import Layout from '../../../components/Layout';
 import Admin from '../../../components/auth/Admin';
 import Category from '../../../components/crud/Category';
-// import Tag from '../../../components/crud/Tag';
+import Tag from '../../../components/crud/Tag';
 import Link from 'next/link';
 
 const CategoryTag = () => {
@@ -12,13 +12,13 @@ const CategoryTag = () => {
                     <div className="row">
                         <div className="col-md-12 pt-5 pb-5">
                             <h2>Manage Categories and Tags</h2>
+                            <span>Double click to delete category or tag</span>
                         </div>
                         <div className="col-md-6">
                             <Category />
                         </div>
                         <div className="col-md-6">
-                            Wait
-                            {/* <Tag /> */}
+                            <Tag />
                         </div>
                     </div>
                 </div>
