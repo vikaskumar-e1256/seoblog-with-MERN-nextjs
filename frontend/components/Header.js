@@ -36,6 +36,8 @@ function Header(args) {
                 <NavbarToggler onClick={toggle} />
                 <Collapse isOpen={isOpen} navbar>
                     <Nav className="me-auto" navbar>
+                        {isAuth() && isAuth().role === 0 && (
+                        <React.Fragment>
                         <NavItem>
                             <Link href="https://github.com/reactstrap/reactstrap">
                                 <NavLink>Home</NavLink>
@@ -51,6 +53,8 @@ function Header(args) {
                                 <NavLink>Pricing</NavLink>
                             </Link>
                         </NavItem>
+                        </React.Fragment>
+                        )}
                     </Nav>
                     <Nav className="me" navbar>
                         {!isAuth() && (

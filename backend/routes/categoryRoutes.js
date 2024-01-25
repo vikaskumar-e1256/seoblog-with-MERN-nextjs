@@ -8,9 +8,9 @@ const { categoryCreateValidator } = require("../validators/category");
 const { requireSignin, adminMiddleware } = require("../controllers/authController");
 
 router.post('/category-create', categoryCreateValidator, runValidation, requireSignin, adminMiddleware, create);
-router.get('/categories', requireSignin, adminMiddleware, list);
+router.get('/categories', list);
 router.delete('/category-delete/:slug', requireSignin, adminMiddleware, deleteCategory);
-router.get('/category/:slug', requireSignin, adminMiddleware, showCategory);
+router.get('/category/:slug', showCategory);
 
 
 

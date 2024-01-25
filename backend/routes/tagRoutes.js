@@ -8,9 +8,9 @@ const { tagCreateValidator } = require("../validators/tag.js");
 const { requireSignin, adminMiddleware } = require("../controllers/authController.js");
 
 router.post('/tag-create', tagCreateValidator, runValidation, requireSignin, adminMiddleware, create);
-router.get('/tags', requireSignin, adminMiddleware, list);
+router.get('/tags', list);
 router.delete('/tag-delete/:slug', requireSignin, adminMiddleware, deleteTag);
-router.get('/tag/:slug', requireSignin, adminMiddleware, showTag);
+router.get('/tag/:slug', showTag);
 
 
 
