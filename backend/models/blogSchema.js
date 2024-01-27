@@ -1,4 +1,7 @@
 const mongoose = require("mongoose");
+const Category = require('./categorySchema');
+const Tag = require('./tagSchema');
+const User = require('./userSchema');
 const { ObjectId } = mongoose.Schema;
 
 const blogSchema = new mongoose.Schema({
@@ -41,17 +44,17 @@ const blogSchema = new mongoose.Schema({
     // This has taken in array because blog has multiple category or tags
     categories: [{
         type: ObjectId, // used for relation
-        ref: 'Category', // Model name
+        ref: Category, // Model name
         requried: true
     }],
     tags: [{
         type: ObjectId, // used for relation
-        ref: 'Tag', // Model name
+        ref: Tag, // Model name
         requried: true
     }],
     postedBy: {
         type: ObjectId, // used for relation
-        ref: 'User', // Model name
+        ref: User, // Model name
         requried: true
     }
 }, { timestamp: true });
